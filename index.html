@@ -46,6 +46,9 @@ button{font:inherit;color:inherit}
 .langs button:first-child{border-left:0}
 .langs button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
 
+.blog-link{font-family:var(--mono);font-size:12px;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--cobalt);white-space:nowrap}
+.blog-link:hover{color:var(--cobalt)}
+
 /* masthead */
 .mast{padding-block:44px 22px;border-bottom:1px solid var(--line)}
 .mast h1{font-family:var(--display);font-weight:400;font-size:clamp(46px,9vw,112px);line-height:.92;letter-spacing:-.02em;margin:0;text-wrap:balance}
@@ -130,6 +133,7 @@ footer{border-top:1px solid var(--line);padding-block:18px 30px;color:var(--soft
 <body>
 <header class="bar"><div class="in">
   <a class="word" href="#inicio" id="home">Enciclopedia <i>Fader</i></a>
+  <a class="blog-link" href="blog/">Blog / Блог</a>
   <label class="search"><span class="mono" aria-hidden="true">⌕</span><input id="q" type="search" autocomplete="off"></label>
   <div class="langs" role="group" aria-label="Idioma / Language">
     <button type="button" data-l="es">ES</button><button type="button" data-l="ru">RU</button><button type="button" data-l="it">IT</button><button type="button" data-l="en">EN</button>
