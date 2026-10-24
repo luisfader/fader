@@ -1,0 +1,22 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Artículos y reflexiones personales de Luis Fader. Статьи и размышления Луиса Фадера."><title>Blog — Fader</title><link rel="stylesheet" href="style.css"></head><body><header class="bar"><div class="wrap"><a class="brand" href="../">Fader<em>.</em></a><nav class="links"><a href="./" data-href-lang="./" aria-current="page"><span data-text-lang="es">Blog</span><span data-text-lang="ru" hidden>Блог</span></a><div class="switch" role="group" aria-label="Idioma / Язык"><button data-lang-switch="es" type="button" aria-pressed="true">ES</button><button data-lang-switch="ru" type="button" aria-pressed="false">РУ</button></div></nav></div></header>
+<main class="wrap">
+<section class="hero" data-text-lang="es"><div class="eyebrow">Luis Fader · Ensayos y reflexiones</div><h1 data-title-lang="es">Blog</h1><p class="deck">Un espacio personal para pensar la lengua, la cultura, la identidad y los países que elegimos conocer.</p></section>
+<section class="hero" data-text-lang="ru" hidden><div class="eyebrow">Луис Фадер · Статьи и размышления</div><h1 data-title-lang="ru">Блог</h1><p class="deck">Личное пространство для разговора о языке, культуре, самоопределении и странах, которые мы открываем для себя.</p></section>
+<section class="entry" data-text-lang="es"><div class="eyebrow">24 de octubre de 2026 · Identidad y cultura</div><h2><a href="entre-argentina-y-rusia.html?lang=es">Argentina de origen, Rusia por elección</a></h2><p>Sobre lo que significa ser argentino, la dificultad de las etiquetas culturales, los estereotipos y el vínculo que nace cuando uno elige vivir en otro país.</p><a class="read" href="entre-argentina-y-rusia.html?lang=es">Leer el artículo →</a></section>
+<section class="entry" data-text-lang="ru" hidden><div class="eyebrow">24 октября 2026 · Идентичность и культура</div><h2><a href="entre-argentina-y-rusia.html?lang=ru">Аргентина по происхождению, Россия по выбору</a></h2><p>О том, что значит быть аргентинцем, почему культурные ярлыки не всегда подходят человеку и как возникает связь со страной, которую выбираешь для жизни.</p><a class="read" href="entre-argentina-y-rusia.html?lang=ru">Читать статью →</a></section>
+</main><footer class="footer"><div class="wrap">© 2026 Luis Fader · <a href="../">Fader</a></div></footer><script>
+(function(){
+  const params=new URLSearchParams(location.search);
+  let lang=params.get('lang')==='ru'?'ru':'es';
+  function switchTo(next){
+    lang=next;document.documentElement.lang=lang;
+    document.querySelectorAll('[data-text-lang]').forEach(el=>el.hidden=el.dataset.textLang!==lang);
+    document.querySelectorAll('[data-lang-switch]').forEach(el=>el.setAttribute('aria-pressed',String(el.dataset.langSwitch===lang)));
+    document.querySelectorAll('[data-href-lang]').forEach(el=>{el.href=el.dataset.hrefLang+'?lang='+lang});
+    document.title=(document.querySelector('[data-title-lang="'+lang+'"]')?.textContent||'Blog')+' — Fader';
+    history.replaceState(null,'',location.pathname+'?lang='+lang);
+  }
+  document.querySelectorAll('[data-lang-switch]').forEach(b=>b.addEventListener('click',()=>switchTo(b.dataset.langSwitch)));
+  switchTo(lang);
+})();
+</script></body></html>
